@@ -19,10 +19,11 @@
                   </tr>
                 </thead>
                 <tbody>
-
+                
+                @php($i = 1)
                 @foreach($users as $user)
                   <tr>
-                    <th scope="row">{{$user->id}}</th>
+                    <td>{{$i++}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->created_at}}</td>

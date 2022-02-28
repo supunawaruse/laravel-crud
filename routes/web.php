@@ -29,8 +29,12 @@ Route::get('contact', [ContactController::class, 'index']);
 
 //Category Routes
 Route::get('/category/all', [CategoryController::class, 'AllCategory'])->name('all.category');
+Route::post('/category/add', [CategoryController::class, 'AddCategory'])->name('add.category');
 
+Route::get('/category/edit/{id}', [CategoryController::class, 'GetCategory'])->name('get.category');
+Route::post('/category/update/{id}', [CategoryController::class, 'UpdateCategory'])->name('update.category');
 
+Route::get('/category/delete/{id}', [CategoryController::class, 'DeleteCategory'])->name('delete.category');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
